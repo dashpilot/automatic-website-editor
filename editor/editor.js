@@ -73,6 +73,8 @@ function receiveMessage(event) {
       document.getElementById('fileInput').addEventListener('change', uploadHandler);
 
     }
+  } else if (data.msg == 'html') {
+    alert(data.html);
   }
 
 }

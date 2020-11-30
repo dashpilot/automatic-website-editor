@@ -79,6 +79,10 @@ if (inIframe()) {
       html += document.body.outerHTML;
       html += `</html>`
       console.log(html);
+      var reply = {};
+      reply.msg = 'html';
+      reply.html = html;
+      sendMessage(reply);
     }
 
   }
