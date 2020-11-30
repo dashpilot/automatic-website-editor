@@ -22,9 +22,28 @@ function receiveMessage(event) {
 
   let data = JSON.parse(event.data);
 
-  document.querySelector('#save').style.display = 'block';
 
-  if (data.msg == 'clicked') {
+
+
+  if (data.msg == 'config') {
+    var blocks = data.add_blocks;
+    blocks.forEach(function(item) {
+      document.querySelector('#add-buttons').innerHTML += `<a class="list-group-item" data-type="${item}">${item}</a>`
+    });
+
+    document.querySelectorAll('.list-group-item').forEach(function(e) {
+      e.addEventListener('click', function(el) {
+        let type = el.target.getAttribute('data-type');
+        let add = {};
+        add.msg = 'add';
+        add.type = type;
+        sendMessage(add);
+      })
+    })
+
+  } else if (data.msg == 'clicked') {
+
+    document.querySelector('#save').style.display = 'block';
 
     console.log('clicked');
 

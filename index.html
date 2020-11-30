@@ -48,16 +48,28 @@
       border-left: 1px solid #DDD;
     }
 
-    #editor-header {
+    .editor-header {
       padding: 15px;
       padding-left: 16px;
       background-color: white;
       border-bottom: 1px solid #DDD;
     }
 
+
+    .pad {
+      padding: 15px;
+    }
+
+    .brdr-top {
+      border-top: 1px solid #DDD;
+    }
+
     #editor-footer {
       padding: 15px;
       padding-top: 0;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
 
     #save {
@@ -76,6 +88,15 @@
     #fileInput {
       display: none;
     }
+
+    .alert-warning {
+      margin-bottom: 0;
+    }
+
+    #add-buttons .list-group-item:hover {
+      cursor: pointer;
+      background-color: #F8F8F8;
+    }
   </style>
   <script src="editor/vendor/rte/rich-text-editor.min.js"></script>
   <link rel='stylesheet' href='editor/vendor/rte/rich-text-editor.css'>
@@ -87,11 +108,19 @@
       <iframe src="example-site/index.html" marginwidth="0" marginheight="0" frameborder="0" id="iframe"></iframe>
     </div>
     <div class="col-md-3" id="editor">
-      <div id="editor-header">
+      <div class="editor-header">
         <h6>Edit</h6>
       </div>
       <div id="editor-content">
         <div class="alert alert-warning text-center">Click on any title, text or image to edit it.</div>
+      </div>
+      <div class="editor-header brdr-top">
+        <h6>Add</h6>
+      </div>
+      <div id="editor-add" class="pad">
+        <ul class="list-group" id="add-buttons">
+
+        </ul>
       </div>
       <div id="editor-footer">
         <button class="btn btn-primary w-100" id="save">Save</button>

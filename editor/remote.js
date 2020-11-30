@@ -2,9 +2,17 @@ cfg = {};
 cfg.img_width = 800;
 cfg.remote_domain = '*';
 cfg.tag_names = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'img'];
+cfg.add_blocks = ['portfolio', 'services']; // ids of the divs that can be 'cloned'
+cfg.add_before = 'add-content-here'; // id of the div where new content should be added
 
 // check if current page is loaded in iframe
 if (inIframe()) {
+
+  let config = {}
+  config.msg = 'config';
+  config.add_blocks = cfg.add_blocks;
+  sendMessage(config);
+
   document.head.innerHTML += `
   <style>
   h1,h2,h3,h4,p,div {
@@ -69,6 +77,14 @@ if (inIframe()) {
       } else if (data.type == 'src') {
         cur.src = data.value;
       }
+    }
+
+    if (data.msg == 'add') {
+      let type = data.type;
+      let html = document.querySelector('#' + type).outerHTML;
+      document.getElementById(cfg.add_before).innerHTML += html;
+
+      console.log('added');
     }
 
     if (data.msg == 'save') {
