@@ -4,6 +4,9 @@ On-page editor that allows you to edit any page/template without any changes to 
 ## About
 What if you could take any existing (Bootstrap-) template and make it editable without changing a line of code? Just add the remote.js script to any page you want to edit, and titles, texts and images become instantly editable! You can even configure which parts of the page can be 'duplicated' or removed by users, so they can expand the existing page layout.
 
+## Demo
+https://automatic-website-editor.dashpilot.vercel.app
+
 ## Features
 - instantly turn a static html page into a visual editor
 - rich text editor
