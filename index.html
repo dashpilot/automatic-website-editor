@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    #iframe {
+      width: calc(100% + 4px);
+      height: 99%;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      margin-left: -2px;
+      margin-top: -2px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    div {
+      border: 1px solid transparent;
+    }
+
+    h1:hover,
+    h2:hover,
+    h3:hover,
+    h4:hover,
+    p:hover,
+    .current-item {
+      border: 1px solid lightblue;
+      cursor: pointer;
+    }
+
+    #editor {
+      background-color: #F8F8F8;
+      border-left: 1px solid #DDD;
+    }
+
+    #editor-header {
+      padding: 15px;
+      padding-left: 16px;
+      background-color: white;
+      border-bottom: 1px solid #DDD;
+    }
+
+    #editor-footer {
+      padding: 15px;
+      padding-top: 0;
+    }
+
+    #save {
+      display: none;
+    }
+
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    #editor-content {
+      padding: 15px;
+    }
+
+    #fileInput {
+      display: none;
+    }
+  </style>
+  <script src="editor/vendor/rte/rich-text-editor.min.js"></script>
+  <link rel='stylesheet' href='editor/vendor/rte/rich-text-editor.css'>
+</head>
+
+<body>
+  <div class="row no-gutters h-100">
+    <div class="col-md-9">
+      <iframe src="example-site/index.html" marginwidth="0" marginheight="0" frameborder="0" id="iframe"></iframe>
+    </div>
+    <div class="col-md-3" id="editor">
+      <div id="editor-header">
+        <h6>Edit</h6>
+      </div>
+      <div id="editor-content">
+        <div class="alert alert-warning text-center">Click on any title, text or image to edit it.</div>
+      </div>
+      <div id="editor-footer">
+        <button class="btn btn-primary w-100" id="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="editor/editor.js"></script>
+
+</body>
+
+</html>
